@@ -25,14 +25,40 @@ data class CourseName(val value: String) {
     }
 }
 
+data class CourseDescription(val value: String) {
+    init {
+        validate()
+    }
+
+    private fun validate() {
+        if (value.length > 150) {
+            throw InvalidCourseDescriptionException(value)
+        }
+    }
+
+}
+
 data class Course private constructor(
     val id: CourseId,
     val name: CourseName,
-    val createdAt: LocalDateTime
+    val createdAt: LocalDateTime,
+    val description: CourseDescription
 ) {
     companion object {
-        fun create(id: String, name: String, createdAt: LocalDateTime) {
-            Course(CourseId.fromString(id), CourseName(name), createdAt)
+        fun create(
+            id: String,
+            name: String,
+            createdAt: LocalDateTime,
+            description: String
+        ) {
+            Course(
+                CourseId.fromString(id),
+                CourseName(name),
+                createdAt,
+                CourseDescription(description)
+            )
         }
     }
 }
+
+

@@ -28,7 +28,7 @@ class CourseCreatorTest : BaseTest() {
     fun `should create a course`() {
         givenFixedDate(fixedDate)
 
-        courseCreator.create(id, name)
+        courseCreator.create(id, name, description)
 
         thenTheCourseShouldBeSaved()
 
@@ -38,7 +38,7 @@ class CourseCreatorTest : BaseTest() {
     fun `should fail with invalid id`() {
         givenFixedDate(fixedDate)
 
-        assertThrows<InvalidCourseIdException> { courseCreator.create("invalidId", name) }
+        assertThrows<InvalidCourseIdException> { courseCreator.create("invalidId", name, description) }
 
     }
 
@@ -46,7 +46,23 @@ class CourseCreatorTest : BaseTest() {
     fun `should fail with invalid name`() {
         givenFixedDate(fixedDate)
 
-        assertThrows<InvalidCourseNameException> { courseCreator.create(id, "") }
+        assertThrows<InvalidCourseNameException> { courseCreator.create(id, "", description) }
+
+
+    }
+
+    @Test
+    fun `should fail with invalid description`() {
+
+        var description = "0"
+
+        for (i in 0..151){
+            description += i.toString()
+        }
+
+        givenFixedDate(fixedDate)
+
+        assertThrows<InvalidCourseNameException> { courseCreator.create(id, "", description) }
 
 
     }
@@ -58,7 +74,8 @@ class CourseCreatorTest : BaseTest() {
                     .create(
                         id = id,
                         name = name,
-                        createdAt = fixedDate
+                        createdAt = fixedDate,
+                        description
                     )
             )
         }
@@ -68,6 +85,7 @@ class CourseCreatorTest : BaseTest() {
     companion object {
         private const val id = "73ff3284-76a7-49b8-992c-bd80a05b41b9"
         private const val name = "Kotlin Hexagonal Architecture"
+        private const val description = "This is a description"
         private val fixedDate = LocalDateTime.parse("2022-08-09T14:50:42")
     }
 }

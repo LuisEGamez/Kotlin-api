@@ -7,12 +7,13 @@ import java.time.LocalDateTime
 
 class CourseCreator(private val repository: CourseRepository, private val clock: Clock) {
 
-    fun create(id: String, name: String) {
+    fun create(id: String, name: String, description: String) {
         Course
             .create(
                 id,
                 name,
-                clock.now()
+                clock.now(),
+                description
             ).let {
                 repository.save(it)
             }
