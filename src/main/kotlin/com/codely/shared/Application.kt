@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan
 @ComponentScan("com.codely")
 class Application
 
+
 fun main(args: Array<String>) {
     runApplication<Application>(*args)
 }

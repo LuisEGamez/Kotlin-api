@@ -50,8 +50,8 @@ data class Course private constructor(
             name: String,
             createdAt: LocalDateTime,
             description: String
-        ) {
-            Course(
+        ): Course {
+            return Course(
                 CourseId.fromString(id),
                 CourseName(name),
                 createdAt,
