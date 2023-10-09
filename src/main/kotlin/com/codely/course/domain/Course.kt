@@ -38,7 +38,7 @@ data class CourseDescription(val value: String) {
 
 }
 
-data class Course private constructor(
+data class Course(
     val id: CourseId,
     val name: CourseName,
     val createdAt: LocalDateTime,
