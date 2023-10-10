@@ -65,6 +65,8 @@ dependencies {
     testImplementation("org.testcontainers:jdbc:1.17.3")
     testImplementation("org.testcontainers:junit-jupiter:1.17.3")
     testImplementation("org.testcontainers:postgresql:1.17.3")
+    testImplementation("io.rest-assured:rest-assured:4.5.1")
+    testImplementation("io.rest-assured:kotlin-extensions:4.5.1")
 }
 
 tasks.withType<KotlinCompile> {

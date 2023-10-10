@@ -1,6 +1,7 @@
 package com.codely.course.infrastruccture.rest
 
 import com.codely.course.application.CourseCreator
+import com.codely.course.domain.InvalidCourseDescriptionException
 import com.codely.course.domain.InvalidCourseIdException
 import com.codely.course.domain.InvalidCourseNameException
 import org.springframework.http.HttpStatus
@@ -29,6 +30,10 @@ class PostCreateCourseController(private val courseCreator: CourseCreator) {
                 is InvalidCourseNameException -> ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body("The course name is not valid")
+
+                is InvalidCourseDescriptionException -> ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body("The course description is not valid")
 
                 else -> ResponseEntity
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
