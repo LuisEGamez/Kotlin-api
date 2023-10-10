@@ -61,7 +61,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-test:2.7.2")
     testImplementation("io.mockk:mockk:1.12.5")
-    testImplementation("org.testcontainers:testcontainers:1.17.3")
+    testImplementation("org.testcontainers:testcontainers:1.19.1")
     testImplementation("org.testcontainers:jdbc:1.17.3")
     testImplementation("org.testcontainers:junit-jupiter:1.17.3")
     testImplementation("org.testcontainers:postgresql:1.17.3")

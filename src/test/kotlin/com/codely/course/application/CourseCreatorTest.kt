@@ -1,6 +1,6 @@
 package com.codely.course.application
 
-import com.codely.course.BaseTest
+import com.codely.shared.BaseTest
 import com.codely.course.domain.Course
 import com.codely.course.domain.CourseRepository
 import com.codely.course.domain.InvalidCourseIdException

@@ -1,4 +1,4 @@
-package com.codely.course
+package com.codely.shared
 
 import com.codely.shared.Clock
 import io.mockk.every

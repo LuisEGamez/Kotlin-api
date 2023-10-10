@@ -1,6 +1,6 @@
-package com.codely.course
+package com.codely.shared
 
-import com.codely.shared.Application
+import com.codely.Application
 import io.mockk.unmockkAll
 import org.junit.jupiter.api.AfterEach
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase

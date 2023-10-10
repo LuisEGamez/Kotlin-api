@@ -1,6 +1,6 @@
 package com.codely.integration.healthcheck
 
-import com.codely.shared.Application
+import com.codely.Application
 import kotlin.test.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

@@ -1,6 +1,6 @@
 package com.codely.course.infrastruccture
 
-import com.codely.course.BaseIntegrationTest
+import com.codely.shared.BaseIntegrationTest
 import com.codely.course.domain.Course
 import com.codely.course.domain.CourseDescription
 import com.codely.course.domain.CourseId

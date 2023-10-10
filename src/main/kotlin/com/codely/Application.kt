@@ -1,11 +1,10 @@
-package com.codely.shared
+package com.codely
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.ComponentScan
 
 @SpringBootApplication
-@ComponentScan("com.codely")
 class Application
 
 
