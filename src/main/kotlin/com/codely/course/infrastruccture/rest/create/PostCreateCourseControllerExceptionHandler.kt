@@ -1,4 +1,4 @@
-package com.codely.course.infrastruccture.rest
+package com.codely.course.infrastruccture.rest.create
 
 import com.codely.course.domain.InvalidCourseIdException
 import com.codely.course.domain.InvalidCourseNameException

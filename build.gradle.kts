@@ -54,6 +54,7 @@ dependencies {
     implementation("org.flywaydb:flyway-core:8.5.13")
     implementation("com.h2database:h2")
     implementation("org.postgresql:postgresql:42.4.3")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
 
 
 

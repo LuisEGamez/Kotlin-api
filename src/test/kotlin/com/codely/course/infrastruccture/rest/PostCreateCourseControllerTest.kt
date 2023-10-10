@@ -3,6 +3,8 @@ package com.codely.course.infrastruccture.rest
 import com.codely.course.application.CourseCreator
 import com.codely.course.domain.InvalidCourseIdException
 import com.codely.course.domain.InvalidCourseNameException
+import com.codely.course.infrastruccture.rest.create.CreateCourseRequest
+import com.codely.course.infrastruccture.rest.create.PostCreateCourseController
 
 import io.mockk.every
 import io.mockk.mockk
