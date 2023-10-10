@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
+import java.net.URI
 
 @RestController
 class PostCreateCourseController(private val courseCreator: CourseCreator) {
@@ -18,7 +19,7 @@ class PostCreateCourseController(private val courseCreator: CourseCreator) {
     ): ResponseEntity<String> {
         return try {
             courseCreator.create(request.id, request.name, request.description)
-            ResponseEntity.ok().build()
+            ResponseEntity.created(URI.create("/course/${request.id}")).build()
         } catch (exception: Throwable) {
             when (exception) {
                 is InvalidCourseIdException -> ResponseEntity
