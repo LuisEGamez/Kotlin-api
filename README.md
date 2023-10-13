@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">
-  💎 Kotlin HTTP API Skeleton
+  💎 Kotlin HTTP API Skeleton.
 </h1>
 
 <p align="center">
