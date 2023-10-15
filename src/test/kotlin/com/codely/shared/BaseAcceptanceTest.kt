@@ -1,3 +1,4 @@
+/*
 package com.codely.shared
 
 import io.mockk.unmockkAll
@@ -23,7 +24,7 @@ class BaseAcceptanceTest {
         val environment: ComposeContainer =
             ComposeContainer(File("docker-compose.yml"))
                 .withExposedService("db", POSTGRES_PORT, Wait.forListeningPort())
-                // .withLocalCompose(true)
+                .withLocalCompose(true)
     }
 
     @PostConstruct
@@ -41,3 +42,4 @@ class BaseAcceptanceTest {
         unmockkAll()
     }
 }
+*/

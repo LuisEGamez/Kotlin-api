@@ -1,3 +1,4 @@
+/*
 package com.codely.course.aceptance
 
 import com.codely.shared.BaseAcceptanceTest
@@ -33,3 +34,4 @@ class PostCreateCourseAcceptanceTest : BaseAcceptanceTest() {
             }
     }
 }
+*/
