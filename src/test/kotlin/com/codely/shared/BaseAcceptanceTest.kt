@@ -12,7 +12,7 @@ import java.io.File
 import javax.annotation.PostConstruct
 import javax.annotation.PreDestroy
 
-@SpringBootTest
+@SpringBootTest(classes = [Application::class])
 @AutoConfigureMockMvc
 @ActiveProfiles("test")
 @Testcontainers
