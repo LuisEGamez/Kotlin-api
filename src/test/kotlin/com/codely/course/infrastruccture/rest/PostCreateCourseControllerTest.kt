@@ -5,9 +5,9 @@ import com.codely.course.domain.InvalidCourseIdException
 import com.codely.course.domain.InvalidCourseNameException
 import com.codely.course.infrastruccture.rest.create.CreateCourseRequest
 import com.codely.course.infrastruccture.rest.create.PostCreateCourseController
-
 import io.mockk.every
 import io.mockk.mockk
+import java.net.URI
 import kotlin.test.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -31,7 +31,7 @@ class PostCreateCourseControllerTest {
 
         val response = controller.execute(CreateCourseRequest("03ef970b-719d-49c5-8d80-7dc762fe4be6", "Test"))
 
-        assertEquals(ResponseEntity.ok().build(), response)
+        assertEquals(ResponseEntity.created(URI.create("/course/03ef970b-719d-49c5-8d80-7dc762fe4be6")).build(), response)
     }
 
     @Test

@@ -1,10 +1,9 @@
 package com.codely.shared
 
-import com.codely.shared.Clock
 import io.mockk.every
 import io.mockk.unmockkAll
-import org.junit.jupiter.api.AfterEach
 import java.time.LocalDateTime
+import org.junit.jupiter.api.AfterEach
 
 open class BaseTest {
 
@@ -18,5 +17,4 @@ open class BaseTest {
     protected fun cleanMock() {
         unmockkAll()
     }
-
 }

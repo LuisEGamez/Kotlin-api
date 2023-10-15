@@ -1,4 +1,4 @@
-package com.codely.course.infrastruccture.find
+package com.codely.course.infrastruccture.rest.find
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

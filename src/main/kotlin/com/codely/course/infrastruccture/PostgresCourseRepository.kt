@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 class PostgresCourseRepository(
     private val jdbcTemplate: NamedParameterJdbcTemplate
-) : CourseRepository{
+) : CourseRepository {
 
     override fun save(course: Course) {
         MapSqlParameterSource()

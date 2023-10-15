@@ -1,6 +1,5 @@
 package com.codely.course.domain
 
-
 import java.time.LocalDateTime
 
 object CourseMother {

@@ -1,16 +1,16 @@
 package com.codely.course.application
 
-import com.codely.shared.BaseTest
 import com.codely.course.domain.Course
 import com.codely.course.domain.CourseRepository
 import com.codely.course.domain.InvalidCourseIdException
 import com.codely.course.domain.InvalidCourseNameException
+import com.codely.shared.BaseTest
 import io.mockk.mockk
 import io.mockk.verify
+import java.time.LocalDateTime
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import java.time.LocalDateTime
 
 class CourseCreatorTest : BaseTest() {
 
@@ -31,7 +31,6 @@ class CourseCreatorTest : BaseTest() {
         courseCreator.create(id, name, description)
 
         thenTheCourseShouldBeSaved()
-
     }
 
     @Test
@@ -39,7 +38,6 @@ class CourseCreatorTest : BaseTest() {
         givenFixedDate(fixedDate)
 
         assertThrows<InvalidCourseIdException> { courseCreator.create("invalidId", name, description) }
-
     }
 
     @Test
@@ -47,8 +45,6 @@ class CourseCreatorTest : BaseTest() {
         givenFixedDate(fixedDate)
 
         assertThrows<InvalidCourseNameException> { courseCreator.create(id, "", description) }
-
-
     }
 
     @Test
@@ -56,15 +52,13 @@ class CourseCreatorTest : BaseTest() {
 
         var description = "0"
 
-        for (i in 0..151){
+        for (i in 0..151) {
             description += i.toString()
         }
 
         givenFixedDate(fixedDate)
 
         assertThrows<InvalidCourseNameException> { courseCreator.create(id, "", description) }
-
-
     }
 
     private fun thenTheCourseShouldBeSaved() {
@@ -80,7 +74,6 @@ class CourseCreatorTest : BaseTest() {
             )
         }
     }
-
 
     companion object {
         private const val id = "73ff3284-76a7-49b8-992c-bd80a05b41b9"

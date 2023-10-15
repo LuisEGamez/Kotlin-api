@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class DependencyInjectionConfig {
 
-
     @Bean
     fun clock() = ClockImp()
 

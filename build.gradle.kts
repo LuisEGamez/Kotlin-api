@@ -56,8 +56,6 @@ dependencies {
     implementation("org.postgresql:postgresql:42.4.3")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
 
-
-
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.boot:spring-boot-test:2.7.2")

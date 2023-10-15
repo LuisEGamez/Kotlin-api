@@ -6,9 +6,9 @@ import io.restassured.module.kotlin.extensions.Extract
 import io.restassured.module.kotlin.extensions.Given
 import io.restassured.module.kotlin.extensions.Then
 import io.restassured.module.kotlin.extensions.When
+import kotlin.test.assertTrue
 import org.junit.jupiter.api.Test
 import org.springframework.http.HttpStatus
-import kotlin.test.assertTrue
 
 class PostCreateCourseAcceptanceTestRestAssure : BaseAcceptanceTestRestAssure() {
 
