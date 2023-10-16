@@ -38,8 +38,6 @@ class BaseAcceptanceTestRestAssure {
             ComposeContainer(File("docker-compose.yml"))
                 .withExposedService("db", POSTGRES_PORT, Wait.forListeningPort())
                 .withLocalCompose(true)
-
-
     }
 
     @PostConstruct

@@ -25,8 +25,6 @@ class GetFindCourseByIdController(private val courseFinder: CourseFinder) {
                         .build()
 
                     else -> {
-                        println(it.message)
-                        it.printStackTrace()
                         ResponseEntity
                             .status(HttpStatus.INTERNAL_SERVER_ERROR)
                             .build()

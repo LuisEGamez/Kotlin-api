@@ -1,12 +1,16 @@
 package com.codely.course.infrastruccture
 
-import com.codely.course.domain.*
+import com.codely.course.domain.Course
+import com.codely.course.domain.CourseDescription
+import com.codely.course.domain.CourseId
+import com.codely.course.domain.CourseName
+import com.codely.course.domain.CourseRepository
+import java.sql.ResultSet
+import java.util.UUID
 import org.springframework.dao.EmptyResultDataAccessException
 import org.springframework.jdbc.core.RowMapper
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
-import java.sql.ResultSet
-import java.util.*
 
 class PostgresCourseRepository(
     private val jdbcTemplate: NamedParameterJdbcTemplate

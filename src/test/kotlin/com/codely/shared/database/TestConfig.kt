@@ -7,5 +7,4 @@ import org.springframework.context.annotation.Configuration
 class TestConfig {
     @Bean
     fun postgresTestUtils() = PostgresTestUtils()
-
 }

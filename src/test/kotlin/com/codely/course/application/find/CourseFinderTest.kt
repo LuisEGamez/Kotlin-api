@@ -7,13 +7,13 @@ import com.codely.course.domain.CourseRepository
 import com.codely.shared.BaseTest
 import io.mockk.every
 import io.mockk.mockk
-import org.junit.jupiter.api.Assertions.*
+import java.time.LocalDateTime
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import java.time.LocalDateTime
 
-class CourseFinderTest : BaseTest(){
+class CourseFinderTest : BaseTest() {
     private lateinit var courseRepository: CourseRepository
     private lateinit var courseFinder: CourseFinder
 
@@ -73,5 +73,4 @@ class CourseFinderTest : BaseTest(){
         private val courseCreatedAt = LocalDateTime.parse("2022-08-31T09:00:00")
         private const val description = "Test"
     }
-
 }

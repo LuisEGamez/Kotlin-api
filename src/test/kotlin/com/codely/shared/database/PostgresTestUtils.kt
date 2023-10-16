@@ -1,9 +1,9 @@
 package com.codely.shared.database
 
 import com.zaxxer.hikari.HikariDataSource
-import org.springframework.beans.factory.annotation.Autowired
 import java.sql.Connection
 import java.sql.Statement
+import org.springframework.beans.factory.annotation.Autowired
 
 class PostgresTestUtils {
     @Autowired
