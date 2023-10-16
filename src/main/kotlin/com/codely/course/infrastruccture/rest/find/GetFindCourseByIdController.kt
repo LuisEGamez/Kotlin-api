@@ -1,5 +1,7 @@
 package com.codely.course.infrastruccture.rest.find
 
+import com.codely.course.application.find.CourseFinder
+import com.codely.course.domain.CourseNotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -7,27 +9,29 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class GetFindCourseByIdController {
-
+class GetFindCourseByIdController(private val courseFinder: CourseFinder) {
     @GetMapping("/course/{id}")
     fun execute(
         @PathVariable id: String
-    ): ResponseEntity<String> {
-        return try {
-            ResponseEntity.ok().body(
-                """
-                 {
-                    "id": "f2fe1e4e-1e8f-493b-ac67-2c88090cae0a",
-                    "name": "Saved course",
-                    "created_at": "2022-08-31T09:07:36",
-                    "description": "Test bla bla"
+    ) = runCatching { courseFinder.execute(id) }
+        .fold(
+            onSuccess = {
+                ResponseEntity.ok().body(it)
+            },
+            onFailure = {
+                when (it) {
+                    is CourseNotFoundException -> ResponseEntity
+                        .status(HttpStatus.NOT_FOUND)
+                        .build()
+
+                    else -> {
+                        println(it.message)
+                        it.printStackTrace()
+                        ResponseEntity
+                            .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                            .build()
+                    }
                 }
-            """.trimIndent()
-            )
-        } catch (exception: Throwable) {
-            ResponseEntity
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .build()
-        }
-    }
+            }
+        )
 }

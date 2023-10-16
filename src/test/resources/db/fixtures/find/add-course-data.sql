@@ -1,2 +1,2 @@
 INSERT INTO course(id, name, created_at, description)
-VALUES ('f2fe1e4e-1e8f-493b-ac67-2c88090cae08', 'Saved course', '2022-08-31T09:07:36.155Z', 'Test bla bla');
+VALUES ('a4ca6e92-9383-416b-86fc-fbc647133efb', 'Saved course', '2022-08-31T09:07:36', 'Test bla bla');
