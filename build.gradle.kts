@@ -105,3 +105,7 @@ flyway {
     user = System.getenv("POSTGRE_USERNAME") ?: "course_username"
     password = System.getenv("POSTGRE_PASSWORD") ?: "course_password"
 }
+
+tasks.bootJar {
+    launchScript()
+}
